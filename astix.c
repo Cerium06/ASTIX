@@ -58,79 +58,62 @@ float invsqrt ( float x ) {
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-vec2_t vec2_add (vec2_t U, vec2_t V) {
-    return vec2_init(
-        U.x + V.x,
-        U.y + V.y
-    );
+vec2_t vec2_add  ( vec2_t u, vec2_t v ) {
+    return vec2_init ( u.x + v.x, u.y + v.y );
 }
 
-vec2_t vec2_sub (vec2_t U, vec2_t V) {
-    return vec2_init(
-        U.x - V.x,
-        U.y - V.y
-    );
+vec2_t vec2_sub  ( vec2_t u, vec2_t v ) {
+    return vec2_init ( u.x - v.x, u.y - v.y );
 }
 
-vec2_t vec2_mul (vec2_t U, vec2_t V) {
-    return vec2_init(
-        U.x * V.x,
-        U.y * V.y
-    );
+vec2_t vec2_mul  ( vec2_t u, vec2_t v ) {
+    return vec2_init ( u.x * v.x, u.y * v.y );
 }
 
-vec2_t vec2_adds (vec2_t U, scal_t S) {
-    return vec2_init(
-        U.x + S,
-        U.y + S
-    );
+vec2_t vec2_adds ( vec2_t u, scal_t s ) {
+    return vec2_init ( u.x + s, u.y + s );
 }
 
-vec2_t vec2_subs (vec2_t U, scal_t S) {
-    return vec2_init(
-        U.x - S,
-        U.y - S
-    );
+vec2_t vec2_subs ( vec2_t u, scal_t s ) {
+    return vec2_init ( u.x - s, u.y - s );
 }
 
-vec2_t vec2_muls (vec2_t U, scal_t S) {
-    return vec2_init(
-        U.x * S,
-        U.y * S);
+vec2_t vec2_muls ( vec2_t u, scal_t s ) {
+    return vec2_init ( u.x * s, u.y * s );
 }
 
 scal_t vec2_dot ( vec2_t u, vec2_t v ) {
     return  ( u.x * v.x ) +
-            ( u.y * v.y);
+            ( u.y * v.y );
 }
 
-scal_t vec2_lensqr ( vec2_t v ) {
-    return ( v.x * v.x ) +
-           ( v.y * v.y);
+scal_t vec2_lensqr ( vec2_t u ) {
+    return ( u.x * u.x ) +
+           ( u.y * u.y );
 }
 
-scal_t vec2_invlength ( vec2_t v ) {
-    return invsqrt ( vec2_lensqr (v) );
+scal_t vec2_invlength ( vec2_t u ) {
+    return invsqrt ( vec2_lensqr (u) );
 }
 
-scal_t vec2_length ( vec2_t v ) {
-    return (sqrtf(vec2_lensqr(v)));
+scal_t vec2_length ( vec2_t u ) {
+    return sqrtf( vec2_lensqr(u) );
 }
 
-vec2_t vec2_normal (vec2_t v) {
-    return (vec2_muls(v, vec2_invlength(v)));
+vec2_t vec2_normal ( vec2_t u ) {
+    return vec2_muls(u, vec2_invlength(u) );
 }
 
-vec2_t vec2_mul_mat2(vec2_t v, mat2_t m)
+vec2_t vec2_mul_mat2( vec2_t u, mat2_t m )
 {
-	return vec2_init(
-        m.vec[0].x * v.x + m.vec[0].y * v.y,
-	    m.vec[1].x * v.x + m.vec[1].y * v.y);
+	return vec2_init (
+        m.vec[0].x * u.x + m.vec[0].y * u.y,
+	    m.vec[1].x * u.x + m.vec[1].y * u.y);
 }
 
 vec2_t vec2_polar ( float dist, float ang )
 {
-    return vec2_init(
+    return vec2_init (
         dist * cosf(ang),
         dist * sinf(ang),    
     );
@@ -145,92 +128,69 @@ vec2_t vec2_polar ( float dist, float ang )
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-vec3_t vec3_add ( vec3_t U, vec3_t V ) {
-    return vec3_init(
-        U.x + V.x,
-        U.y + V.y,
-        U.z + V.z
-    );
+vec3_t vec3_add  ( vec3_t u, vec3_t v ) {
+    return vec3_init ( u.x + v.x, u.y + v.y, u.z + v.z );
 }
 
-vec3_t vec3_sub ( vec3_t U, vec3_t V ) {
-    return vec3_init(
-        U.x - V.x,
-        U.y - V.y,
-        U.z - V.z
-    );
+vec3_t vec3_sub  ( vec3_t u, vec3_t v ) {
+    return vec3_init ( u.x - v.x, u.y - v.y, u.z - v.z );
 }
 
-vec3_t vec3_mul ( vec3_t U, vec3_t V ) {
-    return vec3_init(
-        U.x * V.x,
-        U.y * V.y,
-        U.z * V.z
-    );
+vec3_t vec3_mul  ( vec3_t u, vec3_t v ) {
+    return vec3_init ( u.x * v.x, u.y * v.y, u.z * v.z );
 }
 
-vec3_t vec3_adds ( vec3_t U, scal_t S ) {
-    return vec3_init(
-        U.x + S,
-        U.y + S,
-        U.z + S
-    );
+vec3_t vec3_adds ( vec3_t u, scal_t s ) {
+    return vec3_init ( u.x + s, u.y + s, u.z + s );
 }
 
-vec3_t vec3_subs ( vec3_t U, scal_t S ) {
-    return vec3_init(
-        U.x - S,
-        U.y - S,
-        U.z - S
-    );
+vec3_t vec3_subs ( vec3_t u, scal_t s ) {
+    return vec3_init ( u.x - s, u.y - s, u.z - s );
 }
 
-vec3_t vec3_muls ( vec3_t U, scal_t S ) {
-    return vec3_init(
-        U.x * S,
-        U.y * S,
-        U.z * S
-    );
+vec3_t vec3_muls ( vec3_t u, scal_t s ) {
+    return vec3_init ( u.x * s, u.y * s, u.z * s );
 }
 
-scal_t vec3_dot ( vec3_t U, vec3_t V ) {
-    return  ( U.x * V.x ) +
-            ( U.y * V.y ) + 
-            ( U.z * V.z );
+
+scal_t vec3_dot ( vec3_t u, vec3_t v ) {
+    return  ( u.x * v.x ) +
+            ( u.y * v.y ) + 
+            ( u.z * v.z );
 }
 
-scal_t vec3_lensqr ( vec3_t U ) {
-    return (U.x * U.x) +
-           (U.y * U.y) +
-           (U.z * U.z);
+scal_t vec3_lensqr ( vec3_t u ) {
+    return (u.x * u.x) +
+           (u.y * u.y) +
+           (u.z * u.z);
 }
 
-scal_t vec3_invlength ( vec3_t U ) {
-    return invsqrt( vec3_lensqr(U) );
+scal_t vec3_invlength ( vec3_t u ) {
+    return invsqrt( vec3_lensqr(u) );
 }
 
-scal_t vec3_length ( vec3_t U ) {
-    return sqrtf(vec3_lensqr(U));
+scal_t vec3_length ( vec3_t u ) {
+    return sqrtf( vec3_lensqr(u) );
 }
 
-vec3_t vec3_normal ( vec3_t U ) {
-    return (vec3_muls(U, vec3_invlength(U)));
+vec3_t vec3_normal ( vec3_t u ) {
+    return vec3_muls(u, vec3_invlength(u) );
 }
 
-vec3_t vec3_cross ( vec3_t U, vec3_t V ) {
-    return vec3_init(
-        (U.y*V.z)-(U.z*V.y),
-        (U.x*V.z)-(U.z*V.x),
-        (U.x*V.y)-(U.y*V.x)
+vec3_t vec3_cross ( vec3_t u, vec3_t v ) {
+    return vec3_init (
+        (u.y * v.z) - (u.z * v.y),
+        (u.x * v.z) - (u.z * v.x),
+        (u.x * v.y) - (u.y * v.x)
     );
 }
 
 
-vec3_t vec3_mul_mat3 ( vec3_t v, mat3_t m ) {
-	return vec3_init(
-        m.vec[0].x * v.x + m.vec[0].y * v.y + m.vec[0].z * v.z,
-	    m.vec[1].x * v.x + m.vec[1].y * v.y + m.vec[1].z * v.z,
-	    m.vec[2].x * v.x + m.vec[2].y * v.y + m.vec[2].z * v.z
+vec3_t vec3_mul_mat3 ( vec3_t u, mat3_t m ) {
+	return vec3_init (
+        m.vec[0].x * u.x + m.vec[0].y * u.y + m.vec[0].z * u.z,
+	    m.vec[1].x * u.x + m.vec[1].y * u.y + m.vec[1].z * u.z,
+	    m.vec[2].x * u.x + m.vec[2].y * u.y + m.vec[2].z * u.z
     );
 }
 
@@ -238,12 +198,11 @@ vec3_t vec3_mul_mat4 ( vec3_t V, mat4_t M )
 {
     scal_t s =  1.0f/ (M.vec[3].x * V.x + M.vec[3].w  * V.y + M.vec[3].z * V.z + M.vec[3].w);
     
-    vec3_t U = vec3_init(
+    vec3_t U = vec3_init (
             (M.vec[0].x * V.x + M.vec[0].y * V.y + M.vec[0].z * V.z + M.vec[0].w) * s,
             (M.vec[1].x * V.x + M.vec[1].y * V.y + M.vec[1].z * V.z + M.vec[1].w) * s,
             (M.vec[2].x * V.x + M.vec[2].y * V.y + M.vec[2].z * V.z + M.vec[2].w) * s
     );
-    
     
     return U;
 }
@@ -256,91 +215,62 @@ vec3_t vec3_mul_mat4 ( vec3_t V, mat4_t M )
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-vec4_t vec4_add ( vec4_t U, vec4_t V ) {
-    return vec4_init(
-        U.x + V.x,
-        U.y + V.y,
-        U.z + V.z,
-        U.w + V.w
-    );
+vec4_t vec4_add  ( vec4_t u, vec4_t v ) {
+    return vec4_init ( u.x + v.x, u.y + v.y, u.z + v.z, u.w + v.w );
 }
 
-vec4_t vec4_sub ( vec4_t U, vec4_t V ) {
-    return vec4_init(
-        U.x - V.x,
-        U.y - V.y,
-        U.z - V.z,
-        U.w - V.w
-    );
+vec4_t vec4_sub  ( vec4_t u, vec4_t v ) {
+    return vec4_init ( u.x - v.x, u.y - v.y, u.z - v.z, u.w - v.w );
 }
 
-vec4_t vec4_mul ( vec4_t U, vec4_t V ) {
-    return vec4_init(
-        U.x * V.x,
-        U.y * V.y,
-        U.z * V.z,
-        U.w * V.w
-    );
+vec4_t vec4_mul  ( vec4_t u, vec4_t v ) {
+    return vec4_init ( u.x * v.x, u.y * v.y, u.z * v.z, u.w * v.w );
 }
 
-vec4_t vec4_adds ( vec4_t U, scal_t S ) {
-    return vec4_init(
-        U.x + S,
-        U.y + S,
-        U.z + S,
-        U.w + S
-    );
+vec4_t vec4_adds ( vec4_t u, scal_t s ) {
+    return vec4_init ( u.x + s, u.y + s, u.z + s, u.w + s );
 }
 
-vec4_t vec4_subs ( vec4_t U, scal_t S ) {
-    return vec4_init(
-        U.x - S,
-        U.y - S,
-        U.z - S,
-        U.w - S
-    );
+vec4_t vec4_subs ( vec4_t u, scal_t s ) {
+    return vec4_init ( u.x - s, u.y - s, u.z - s, u.w - s );
 }
 
-vec4_t vec4_muls ( vec4_t U, scal_t S) {
-    return vec4_init(
-        U.x * S,
-        U.y * S,
-        U.z * S,
-        U.w * S
-    );
+vec4_t vec4_muls ( vec4_t u, scal_t s ) {
+    return vec4_init ( u.x * s, u.y * s, u.z * s, u.w * s );
 }
 
-scal_t vec4_dot ( vec4_t U, vec4_t V ) {
-    return  ( U.x * V.x ) + 
-            ( U.y * V.y ) +
-            ( U.z * V.z ) + 
-            ( U.w * V.w );
-}
-scal_t vec4_lensqr ( vec4_t U ) {
-    return (U.x * U.x) +
-           (U.y * U.y) +
-           (U.z * U.z) +
-           (U.w * U.w);
+scal_t vec4_dot ( vec4_t u, vec4_t v ) {
+    return  ( u.x * v.x ) + 
+            ( u.y * v.y ) +
+            ( u.z * v.z ) + 
+            ( u.w * v.w );
 }
 
-scal_t vec4_invlength (vec4_t U) {
-    return invsqrt( vec4_lensqr(U) );
+scal_t vec4_lensqr ( vec4_t u ) {
+    return (u.x * u.x) +
+           (u.y * u.y) +
+           (u.z * u.z) +
+           (u.w * u.w);
 }
 
-scal_t vec4_length ( vec4_t U ) {
-    return sqrtf(vec4_lensqr(U));
+scal_t vec4_invlength ( vec4_t u ) {
+    return invsqrt( vec4_lensqr(u) );
 }
 
-vec4_t vec4_normal ( vec4_t U ) {
-    return vec4_muls(U, vec4_invlength(U));
+scal_t vec4_length ( vec4_t u ) {
+    return sqrtf( vec4_lensqr(u) );
 }
 
-vec4_t vec4_mul_mat4 ( vec4_t v, mat4_t m ) {
-	return vec4_init(
-        (m.vec[0].x*v.x)+(m.vec[0].y*v.y)+(m.vec[0].z*v.z)+(m.vec[0].w*v.w),
-	    (m.vec[1].x*v.x)+(m.vec[1].y*v.y)+(m.vec[1].z*v.z)+(m.vec[1].w*v.w),
-	    (m.vec[2].x*v.x)+(m.vec[2].y*v.y)+(m.vec[2].z*v.z)+(m.vec[2].w*v.w),
-	    (m.vec[3].x*v.x)+(m.vec[3].y*v.y)+(m.vec[3].z*v.z)+(m.vec[3].w*v.w));
+vec4_t vec4_normal ( vec4_t u ) {
+    return vec4_muls(u, vec4_invlength(u));
+}
+
+vec4_t vec4_mul_mat4 ( vec4_t u, mat4_t m ) {
+	return vec4_init (
+        (m.vec[0].x * u.x) + (m.vec[0].y * u.y) + (m.vec[0].z * u.z) + (m.vec[0].w * u.w),
+	    (m.vec[1].x * u.x) + (m.vec[1].y * u.y) + (m.vec[1].z * u.z) + (m.vec[1].w * u.w),
+	    (m.vec[2].x * u.x) + (m.vec[2].y * u.y) + (m.vec[2].z * u.z) + (m.vec[2].w * u.w),
+	    (m.vec[3].x * u.x) + (m.vec[3].y * u.y) + (m.vec[3].z * u.z) + (m.vec[3].w * u.w));
 }
 
 /////////////////////////////////////////////////////////////////
@@ -351,60 +281,35 @@ vec4_t vec4_mul_mat4 ( vec4_t v, mat4_t m ) {
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
+quat_t quat_add  ( quat_t u, quat_t v ) {
+    return quat_init ( u.x + v.x, u.y + v.y, u.z + v.z, u.w + v.w );
+}
 
-quat_t quat_add  ( quat_t U, quat_t V ) {
-    return quat_init(
-        U.x + V.x,
-        U.y + V.y,
-        U.z + V.z,
-        U.w + V.w
+quat_t quat_sub  ( quat_t u, quat_t v ) {
+    return quat_init ( u.x - v.x, u.y - v.y, u.z - v.z, u.w - v.w );
+}
+
+quat_t quat_mul  ( quat_t q, quat_t r ) {
+    return quat_init (
+        q.w * r.x + q.x * r.w + q.y * r.z - q.z * r.y,
+        q.w * r.y + q.y * r.w + q.z * r.x - q.x * r.z,
+        q.w * r.z + q.z * r.w + q.x * r.y - q.y * r.x,
+        q.w * r.w - q.x * r.x - q.y * r.y - q.z * r.z
     );
 }
 
-quat_t quat_sub  ( quat_t U, quat_t V ) {
-    return quat_init(
-        U.x - V.x,
-        U.y - V.y,
-        U.z - V.z,
-        U.w - V.w
-    );
+quat_t quat_adds ( quat_t u, scal_t s ) {
+    return quat_init ( u.x + s, u.y + s, u.z + s, u.w + s );
 }
 
-quat_t quat_mul  ( quat_t U, quat_t V ) {
-    return quat_init(
-        U.w * V.x + U.x * V.w + U.y * V.z - U.z * V.y,
-        U.w * V.y + U.y * V.w + U.z * V.x - U.x * V.z,
-        U.w * V.z + U.z * V.w + U.x * V.y - U.y * V.x,
-        U.w * V.w - U.x * V.x - U.y * V.y - U.z * V.z
-    );
+quat_t quat_subs ( quat_t u, scal_t s ) {
+    return quat_init ( u.x - s, u.y - s, u.z - s, u.w - s );
 }
 
-quat_t quat_adds ( quat_t U, scal_t S ) {
-    return quat_init(
-        U.x + S,
-        U.y + S,
-        U.z + S,
-        U.w + S
-    );
+quat_t quat_muls ( quat_t u, scal_t s ) {
+    return quat_init ( u.x * s, u.y * s, u.z * s, u.w * s );
 }
 
-quat_t quat_subs ( quat_t U, scal_t S ) {
-    return quat_init(
-        U.x - S,
-        U.y - S,
-        U.z - S,
-        U.w - S
-    );
-}
-
-quat_t quat_muls ( quat_t U, scal_t S ) {
-    return quat_init(
-        U.x * S,
-        U.y * S,
-        U.z * S,
-        U.w * S
-    );
-}
 
 scal_t quat_dot  ( quat_t q, quat_t r ) {
     return ( q.x * r.x ) + 
@@ -457,79 +362,72 @@ mat2_t mat2_identity ( void ) {
     return _mat2_id_;
 }
 
-mat2_t mat2_diagonal (float d) {
-    return (mat2_t){d, 0.0f, 0.0f, d};
-}
-
-mat2_t mat2_add (mat2_t M, mat2_t N) {
+mat2_t mat2_add ( mat2_t m, mat2_t n ) {
     return mat2_init(
-        vec2_add(M.vec[0], N.vec[0]),
-        vec2_add(M.vec[1], N.vec[1])
+        vec2_add(m.vec[0], n.vec[0]),
+        vec2_add(m.vec[1], n.vec[1])
     );
 }
 
-mat2_t mat2_sub (mat2_t M, mat2_t N) {
+mat2_t mat2_sub ( mat2_t m, mat2_t n ) {
     return mat2_init(
-        vec2_sub(M.vec[0], N.vec[0]),
-        vec2_sub(M.vec[1], N.vec[1])
+        vec2_sub(m.vec[0], n.vec[0]),
+        vec2_sub(m.vec[1], n.vec[1])
     );
 }
 
-mat2_t mat2_mul(mat2_t M, mat2_t N)
-{
-    mat2_t O = mat2_identity();    
-    O.mat[0][0] = M.mat[0][0] * N.mat[0][0] + M.mat[1][0] * N.mat[0][1];
-    O.mat[0][1] = M.mat[0][1] * N.mat[0][0] + M.mat[1][1] * N.mat[0][1];
-    O.mat[1][0] = M.mat[0][0] * N.mat[1][0] + M.mat[1][0] * N.mat[1][1];
-    O.mat[1][1] = M.mat[0][1] * N.mat[1][0] + M.mat[1][1] * N.mat[1][1];
-    return O;
+mat2_t mat2_mul( mat2_t m, mat2_t n ) {
+    mat2_t o = mat2_identity();    
+    o.mat[0][0] = m.mat[0][0] * n.mat[0][0] + m.mat[1][0] * n.mat[0][1];
+    o.mat[0][1] = m.mat[0][1] * n.mat[0][0] + m.mat[1][1] * n.mat[0][1];
+    o.mat[1][0] = m.mat[0][0] * n.mat[1][0] + m.mat[1][0] * n.mat[1][1];
+    o.mat[1][1] = m.mat[0][1] * n.mat[1][0] + m.mat[1][1] * n.mat[1][1];
+    return o;
 }
 
-mat2_t mat2_adds (mat2_t M, scal_t S) {
+mat2_t mat2_adds ( mat2_t m, scal_t s ) {
     return mat2_init(
-        vec2_adds(M.vec[0], S),
-        vec2_adds(M.vec[1], S)
+        vec2_adds( m.vec[0], s ),
+        vec2_adds( m.vec[1], s )
     );
 }
 
-mat2_t mat2_subs (mat2_t M, scal_t S) {
+mat2_t mat2_subs ( mat2_t m, scal_t s ) {
     return mat2_init(
-        vec2_subs(M.vec[0], S),
-        vec2_subs(M.vec[1], S)
+        vec2_subs( m.vec[0], s ),
+        vec2_subs( m.vec[1], s )
     );
 }
 
-mat2_t mat2_muls (mat2_t M, scal_t S) {
+mat2_t mat2_muls ( mat2_t m, scal_t s ) {
     return mat2_init(
-        vec2_muls(M.vec[0], S),
-        vec2_muls(M.vec[1], S)
+        vec2_muls(m.vec[0], s),
+        vec2_muls(m.vec[1], s)
     );
 }
 
-mat2_t mat2_transpose (mat2_t M)
-{
-    mat2_t R = M; 
-    R.elm[1] = M.elm[2];
-    R.elm[2] = M.elm[1];
-    return R;
+mat2_t mat2_transpose ( mat2_t m ) {
+    mat2_t t = m; 
+    t.elm[1] = m.elm[2];
+    t.elm[2] = m.elm[1];
+    return t;
 }
 
-mat2_t mat2_inverse(mat2_t M)
-{
-    mat2_t I = mat2_identity();
-    scal_t det = M.mat[0][0] * M.mat[1][1] - M.mat[0][1] * M.mat[1][0];
+mat2_t mat2_inverse( mat2_t m ) {
+    mat2_t i = mat2_identity();
+    scal_t det = m.mat[0][0] * m.mat[1][1] - m.mat[0][1] * m.mat[1][0];
     
     if( fabs(det) < 1e-10 )
     {
-        return I;
+        return i;
     }
     
     det = 1.0f/det;
-    I.elm[0] = det*+M.mat[1][1];
-    I.elm[1] = det*-M.mat[0][1];
-    I.elm[2] = det*-M.mat[1][0];
-    I.elm[3] = det*+M.mat[0][0];
-    return I;
+    i.elm[0] = det * +m.mat[1][1];
+    i.elm[1] = det * -m.mat[0][1];
+    i.elm[2] = det * -m.mat[1][0];
+    i.elm[3] = det * +m.mat[0][0];
+    return i;
 }
 /////////////////////////////////////////////////////////////////
 //===============================================================
@@ -549,68 +447,62 @@ mat3_t mat3_identity ( void ) {
     return _mat3_id_;
 }
 
-mat3_t mat3_add (mat3_t M, mat3_t N)
-{
+mat3_t mat3_add ( mat3_t m, mat3_t n ) {
     return mat3_init(
-        vec3_add(M.vec[0], N.vec[0]),
-        vec3_add(M.vec[1], N.vec[1]),
-        vec3_add(M.vec[2], N.vec[2])
+        vec3_add(m.vec[0], n.vec[0]),
+        vec3_add(m.vec[1], n.vec[1]),
+        vec3_add(m.vec[2], n.vec[2])
     );
 }
 
-mat3_t mat3_sub (mat3_t M, mat3_t N)
-{
-    return mat3_init(
-        vec3_sub(M.vec[0], N.vec[0]), 
-        vec3_sub(M.vec[1], N.vec[1]), 
-        vec3_sub(M.vec[2], N.vec[2])
+mat3_t mat3_sub ( mat3_t m, mat3_t n ) {
+    return mat3_init (
+        vec3_sub(m.vec[0], n.vec[0]), 
+        vec3_sub(m.vec[1], n.vec[1]), 
+        vec3_sub(m.vec[2], n.vec[2])
     );
 }
 
-mat3_t mat3_mul (mat3_t M, mat3_t N)
-{
-    mat3_t O = mat3_identity();
-    O.mat[0][0] = M.mat[0][0] * N.mat[0][0] + M.mat[1][0] * N.mat[0][1] + M.mat[2][0] * N.mat[0][2];
-    O.mat[0][1] = M.mat[0][1] * N.mat[0][0] + M.mat[1][1] * N.mat[0][1] + M.mat[2][1] * N.mat[0][2];
-    O.mat[0][2] = M.mat[0][2] * N.mat[0][0] + M.mat[1][2] * N.mat[0][1] + M.mat[2][2] * N.mat[0][2];
-    O.mat[1][0] = M.mat[0][0] * N.mat[1][0] + M.mat[1][0] * N.mat[1][1] + M.mat[2][0] * N.mat[1][2];
-    O.mat[1][1] = M.mat[0][1] * N.mat[1][0] + M.mat[1][1] * N.mat[1][1] + M.mat[2][1] * N.mat[1][2];
-    O.mat[1][2] = M.mat[0][2] * N.mat[1][0] + M.mat[1][2] * N.mat[1][1] + M.mat[2][2] * N.mat[1][2];
-    O.mat[2][0] = M.mat[0][0] * N.mat[2][0] + M.mat[1][0] * N.mat[2][1] + M.mat[2][0] * N.mat[2][2];
-    O.mat[2][1] = M.mat[0][1] * N.mat[2][0] + M.mat[1][1] * N.mat[2][1] + M.mat[2][1] * N.mat[2][2];
-    O.mat[2][2] = M.mat[0][2] * N.mat[2][0] + M.mat[1][2] * N.mat[2][1] + M.mat[2][2] * N.mat[2][2];
-    return O;    
+mat3_t mat3_mul ( mat3_t m, mat3_t n ) {
+    mat3_t o = mat3_identity();
+    o.mat[0][0] = m.mat[0][0] * n.mat[0][0] + m.mat[1][0] * n.mat[0][1] + m.mat[2][0] * n.mat[0][2];
+    o.mat[0][1] = m.mat[0][1] * n.mat[0][0] + m.mat[1][1] * n.mat[0][1] + m.mat[2][1] * n.mat[0][2];
+    o.mat[0][2] = m.mat[0][2] * n.mat[0][0] + m.mat[1][2] * n.mat[0][1] + m.mat[2][2] * n.mat[0][2];
+    o.mat[1][0] = m.mat[0][0] * n.mat[1][0] + m.mat[1][0] * n.mat[1][1] + m.mat[2][0] * n.mat[1][2];
+    o.mat[1][1] = m.mat[0][1] * n.mat[1][0] + m.mat[1][1] * n.mat[1][1] + m.mat[2][1] * n.mat[1][2];
+    o.mat[1][2] = m.mat[0][2] * n.mat[1][0] + m.mat[1][2] * n.mat[1][1] + m.mat[2][2] * n.mat[1][2];
+    o.mat[2][0] = m.mat[0][0] * n.mat[2][0] + m.mat[1][0] * n.mat[2][1] + m.mat[2][0] * n.mat[2][2];
+    o.mat[2][1] = m.mat[0][1] * n.mat[2][0] + m.mat[1][1] * n.mat[2][1] + m.mat[2][1] * n.mat[2][2];
+    o.mat[2][2] = m.mat[0][2] * n.mat[2][0] + m.mat[1][2] * n.mat[2][1] + m.mat[2][2] * n.mat[2][2];
+    return o;    
 }
 
-mat3_t mat3_adds (mat3_t M, scal_t S)
+mat3_t mat3_adds ( mat3_t m, scal_t s )
 {
     return mat3_init(
-        vec3_adds(M.vec[0], S), 
-        vec3_adds(M.vec[1], S), 
-        vec3_adds(M.vec[2], S)
+        vec3_adds(m.vec[0], s), 
+        vec3_adds(m.vec[1], s), 
+        vec3_adds(m.vec[2], s)
     );
 }
 
-mat3_t mat3_subs (mat3_t M, scal_t S)
-{
+mat3_t mat3_subs ( mat3_t m, scal_t s ) {
     return mat3_init(
-        vec3_subs(M.vec[0], S), 
-        vec3_subs(M.vec[1], S), 
-        vec3_subs(M.vec[2], S)
+        vec3_subs(m.vec[0], s), 
+        vec3_subs(m.vec[1], s), 
+        vec3_subs(m.vec[2], s)
     );
 }
 
-mat3_t mat3_muls (mat3_t M, scal_t S)
-{
+mat3_t mat3_muls ( mat3_t m, scal_t s ) {
     return mat3_init(
-        vec3_muls(M.vec[0], S), 
-        vec3_muls(M.vec[1], S), 
-        vec3_muls(M.vec[2], S)
+        vec3_muls(m.vec[0], s), 
+        vec3_muls(m.vec[1], s), 
+        vec3_muls(m.vec[2], s)
     );
 }
 
-mat3_t mat3_transpose(mat3_t M)
-{
+mat3_t mat3_transpose ( mat3_t M ) {
     mat3_t T = M;
     T.mat[0][1] = M.mat[1][0];
     T.mat[0][2] = M.mat[2][0];
@@ -621,39 +513,37 @@ mat3_t mat3_transpose(mat3_t M)
     return T;
 }
 
-mat3_t mat3_inverse(mat3_t M)
-{
-	mat3_t I = mat3_identity();
+mat3_t mat3_inverse ( mat3_t m ) {
+	mat3_t i = mat3_identity();
 	double det = 0.0f;
 
-	I.mat[0][0] = M.mat[1][1] * M.mat[2][2] - M.mat[1][2] * M.mat[2][1];
-	I.mat[1][0] = M.mat[1][2] * M.mat[2][0] - M.mat[1][0] * M.mat[2][2];
-	I.mat[2][0] = M.mat[1][0] * M.mat[2][1] - M.mat[1][1] * M.mat[2][0];
+	i.mat[0][0] = m.mat[1][1] * m.mat[2][2] - m.mat[1][2] * m.mat[2][1];
+	i.mat[1][0] = m.mat[1][2] * m.mat[2][0] - m.mat[1][0] * m.mat[2][2];
+	i.mat[2][0] = m.mat[1][0] * m.mat[2][1] - m.mat[1][1] * m.mat[2][0];
 
-	det = M.mat[0][0] * I.mat[0][0] + M.mat[0][1] * I.mat[1][0] + M.mat[0][2] * I.mat[2][0];
+	det = m.mat[0][0] * i.mat[0][0] + m.mat[0][1] * i.mat[1][0] + m.mat[0][2] * i.mat[2][0];
 
 	if ( fabs(det) < 1e-10 ) {
-		return I;
+		return i;
 	}
 
 	det = 1.0f / det;
-
-	I.mat[0][1] = M.mat[0][2] * M.mat[2][1] - M.mat[0][1] * M.mat[2][2];
-	I.mat[0][2] = M.mat[0][1] * M.mat[1][2] - M.mat[0][2] * M.mat[1][1];
-	I.mat[1][1] = M.mat[0][0] * M.mat[2][2] - M.mat[0][2] * M.mat[2][0];
-	I.mat[1][2] = M.mat[0][2] * M.mat[1][0] - M.mat[0][0] * M.mat[1][2];
-	I.mat[2][1] = M.mat[0][1] * M.mat[2][0] - M.mat[0][0] * M.mat[2][1];
-	I.mat[2][2] = M.mat[0][0] * M.mat[1][1] - M.mat[0][1] * M.mat[1][0];
-	M.mat[0][0] = I.mat[0][0] * det;
-	M.mat[0][1] = I.mat[0][1] * det;
-	M.mat[0][2] = I.mat[0][2] * det;
-	M.mat[1][0] = I.mat[1][0] * det;
-	M.mat[1][1] = I.mat[1][1] * det;
-	M.mat[1][2] = I.mat[1][2] * det;
-	M.mat[2][0] = I.mat[2][0] * det;
-	M.mat[2][1] = I.mat[2][1] * det;
-	M.mat[2][2] = I.mat[2][2] * det;
-	return M;
+	i.mat[0][1] = m.mat[0][2] * m.mat[2][1] - m.mat[0][1] * m.mat[2][2];
+	i.mat[0][2] = m.mat[0][1] * m.mat[1][2] - m.mat[0][2] * m.mat[1][1];
+	i.mat[1][1] = m.mat[0][0] * m.mat[2][2] - m.mat[0][2] * m.mat[2][0];
+	i.mat[1][2] = m.mat[0][2] * m.mat[1][0] - m.mat[0][0] * m.mat[1][2];
+	i.mat[2][1] = m.mat[0][1] * m.mat[2][0] - m.mat[0][0] * m.mat[2][1];
+	i.mat[2][2] = m.mat[0][0] * m.mat[1][1] - m.mat[0][1] * m.mat[1][0];
+	m.mat[0][0] = i.mat[0][0] * det;
+	m.mat[0][1] = i.mat[0][1] * det;
+	m.mat[0][2] = i.mat[0][2] * det;
+	m.mat[1][0] = i.mat[1][0] * det;
+	m.mat[1][1] = i.mat[1][1] * det;
+	m.mat[1][2] = i.mat[1][2] * det;
+	m.mat[2][0] = i.mat[2][0] * det;
+	m.mat[2][1] = i.mat[2][1] * det;
+	m.mat[2][2] = i.mat[2][2] * det;
+	return m;
 }
 
 /////////////////////////////////////////////////////////////////
@@ -675,97 +565,90 @@ mat4_t mat4_identity ( void ) {
     return _mat4_id_;
 }
 
-mat4_t mat4_add ( mat4_t M, mat4_t N )
-{
+mat4_t mat4_add ( mat4_t m, mat4_t n ) {
     return mat4_init(
-        vec4_add(M.vec[0], N.vec[0]), 
-        vec4_add(M.vec[1], N.vec[1]), 
-        vec4_add(M.vec[2], N.vec[2]), 
-        vec4_add(M.vec[3], N.vec[3])
+        vec4_add(m.vec[0], n.vec[0]), 
+        vec4_add(m.vec[1], n.vec[1]), 
+        vec4_add(m.vec[2], n.vec[2]), 
+        vec4_add(m.vec[3], n.vec[3])
     );
 }
 
-mat4_t mat4_sub ( mat4_t M, mat4_t N )
-{
+mat4_t mat4_sub ( mat4_t m, mat4_t n ) {
     return mat4_init(
-        vec4_sub(M.vec[0], N.vec[0]), 
-        vec4_sub(M.vec[1], N.vec[1]), 
-        vec4_sub(M.vec[2], N.vec[2]), 
-        vec4_sub(M.vec[3], N.vec[3])
+        vec4_sub(m.vec[0], n.vec[0]), 
+        vec4_sub(m.vec[1], n.vec[1]), 
+        vec4_sub(m.vec[2], n.vec[2]), 
+        vec4_sub(m.vec[3], n.vec[3])
     );
 }
 
-mat4_t mat4_mul( mat4_t M, mat4_t N )
-{
-    mat4_t O = mat4_identity();
-    O.mat[0][0] = M.mat[0][0] * N.mat[0][0] + M.mat[1][0] * N.mat[0][1] + M.mat[2][0] * N.mat[0][2] + M.mat[3][0] * N.mat[0][3];
-    O.mat[0][1] = M.mat[0][1] * N.mat[0][0] + M.mat[1][1] * N.mat[0][1] + M.mat[2][1] * N.mat[0][2] + M.mat[3][1] * N.mat[0][3];
-    O.mat[0][2] = M.mat[0][2] * N.mat[0][0] + M.mat[1][2] * N.mat[0][1] + M.mat[2][2] * N.mat[0][2] + M.mat[3][2] * N.mat[0][3];
-    O.mat[0][3] = M.mat[0][3] * N.mat[0][0] + M.mat[1][3] * N.mat[0][1] + M.mat[2][3] * N.mat[0][2] + M.mat[3][3] * N.mat[0][3];
-    O.mat[1][0] = M.mat[0][0] * N.mat[1][0] + M.mat[1][0] * N.mat[1][1] + M.mat[2][0] * N.mat[1][2] + M.mat[3][0] * N.mat[1][3];
-    O.mat[1][1] = M.mat[0][1] * N.mat[1][0] + M.mat[1][1] * N.mat[1][1] + M.mat[2][1] * N.mat[1][2] + M.mat[3][1] * N.mat[1][3];
-    O.mat[1][2] = M.mat[0][2] * N.mat[1][0] + M.mat[1][2] * N.mat[1][1] + M.mat[2][2] * N.mat[1][2] + M.mat[3][2] * N.mat[1][3];
-    O.mat[1][3] = M.mat[0][3] * N.mat[1][0] + M.mat[1][3] * N.mat[1][1] + M.mat[2][3] * N.mat[1][2] + M.mat[3][3] * N.mat[1][3];
-    O.mat[2][0] = M.mat[0][0] * N.mat[2][0] + M.mat[1][0] * N.mat[2][1] + M.mat[2][0] * N.mat[2][2] + M.mat[3][0] * N.mat[2][3];
-    O.mat[2][1] = M.mat[0][1] * N.mat[2][0] + M.mat[1][1] * N.mat[2][1] + M.mat[2][1] * N.mat[2][2] + M.mat[3][1] * N.mat[2][3];
-    O.mat[2][2] = M.mat[0][2] * N.mat[2][0] + M.mat[1][2] * N.mat[2][1] + M.mat[2][2] * N.mat[2][2] + M.mat[3][2] * N.mat[2][3];
-    O.mat[2][3] = M.mat[0][3] * N.mat[2][0] + M.mat[1][3] * N.mat[2][1] + M.mat[2][3] * N.mat[2][2] + M.mat[3][3] * N.mat[2][3];
-    O.mat[3][0] = M.mat[0][0] * N.mat[3][0] + M.mat[1][0] * N.mat[3][1] + M.mat[2][0] * N.mat[3][2] + M.mat[3][0] * N.mat[3][3];
-    O.mat[3][1] = M.mat[0][1] * N.mat[3][0] + M.mat[1][1] * N.mat[3][1] + M.mat[2][1] * N.mat[3][2] + M.mat[3][1] * N.mat[3][3];
-    O.mat[3][2] = M.mat[0][2] * N.mat[3][0] + M.mat[1][2] * N.mat[3][1] + M.mat[2][2] * N.mat[3][2] + M.mat[3][2] * N.mat[3][3];
-    O.mat[3][3] = M.mat[0][3] * N.mat[3][0] + M.mat[1][3] * N.mat[3][1] + M.mat[2][3] * N.mat[3][2] + M.mat[3][3] * N.mat[3][3];
-    return O;    
+mat4_t mat4_mul ( mat4_t m, mat4_t n ) {
+    mat4_t o = mat4_identity();
+    o.mat[0][0] = m.mat[0][0] * n.mat[0][0] + m.mat[1][0] * n.mat[0][1] + m.mat[2][0] * n.mat[0][2] + m.mat[3][0] * n.mat[0][3];
+    o.mat[0][1] = m.mat[0][1] * n.mat[0][0] + m.mat[1][1] * n.mat[0][1] + m.mat[2][1] * n.mat[0][2] + m.mat[3][1] * n.mat[0][3];
+    o.mat[0][2] = m.mat[0][2] * n.mat[0][0] + m.mat[1][2] * n.mat[0][1] + m.mat[2][2] * n.mat[0][2] + m.mat[3][2] * n.mat[0][3];
+    o.mat[0][3] = m.mat[0][3] * n.mat[0][0] + m.mat[1][3] * n.mat[0][1] + m.mat[2][3] * n.mat[0][2] + m.mat[3][3] * n.mat[0][3];
+    o.mat[1][0] = m.mat[0][0] * n.mat[1][0] + m.mat[1][0] * n.mat[1][1] + m.mat[2][0] * n.mat[1][2] + m.mat[3][0] * n.mat[1][3];
+    o.mat[1][1] = m.mat[0][1] * n.mat[1][0] + m.mat[1][1] * n.mat[1][1] + m.mat[2][1] * n.mat[1][2] + m.mat[3][1] * n.mat[1][3];
+    o.mat[1][2] = m.mat[0][2] * n.mat[1][0] + m.mat[1][2] * n.mat[1][1] + m.mat[2][2] * n.mat[1][2] + m.mat[3][2] * n.mat[1][3];
+    o.mat[1][3] = m.mat[0][3] * n.mat[1][0] + m.mat[1][3] * n.mat[1][1] + m.mat[2][3] * n.mat[1][2] + m.mat[3][3] * n.mat[1][3];
+    o.mat[2][0] = m.mat[0][0] * n.mat[2][0] + m.mat[1][0] * n.mat[2][1] + m.mat[2][0] * n.mat[2][2] + m.mat[3][0] * n.mat[2][3];
+    o.mat[2][1] = m.mat[0][1] * n.mat[2][0] + m.mat[1][1] * n.mat[2][1] + m.mat[2][1] * n.mat[2][2] + m.mat[3][1] * n.mat[2][3];
+    o.mat[2][2] = m.mat[0][2] * n.mat[2][0] + m.mat[1][2] * n.mat[2][1] + m.mat[2][2] * n.mat[2][2] + m.mat[3][2] * n.mat[2][3];
+    o.mat[2][3] = m.mat[0][3] * n.mat[2][0] + m.mat[1][3] * n.mat[2][1] + m.mat[2][3] * n.mat[2][2] + m.mat[3][3] * n.mat[2][3];
+    o.mat[3][0] = m.mat[0][0] * n.mat[3][0] + m.mat[1][0] * n.mat[3][1] + m.mat[2][0] * n.mat[3][2] + m.mat[3][0] * n.mat[3][3];
+    o.mat[3][1] = m.mat[0][1] * n.mat[3][0] + m.mat[1][1] * n.mat[3][1] + m.mat[2][1] * n.mat[3][2] + m.mat[3][1] * n.mat[3][3];
+    o.mat[3][2] = m.mat[0][2] * n.mat[3][0] + m.mat[1][2] * n.mat[3][1] + m.mat[2][2] * n.mat[3][2] + m.mat[3][2] * n.mat[3][3];
+    o.mat[3][3] = m.mat[0][3] * n.mat[3][0] + m.mat[1][3] * n.mat[3][1] + m.mat[2][3] * n.mat[3][2] + m.mat[3][3] * n.mat[3][3];
+    return o;    
 }
 
-mat4_t mat4_adds( mat4_t M, scal_t S )
-{
+mat4_t mat4_adds ( mat4_t m, scal_t s ) {
     return mat4_init(
-        vec4_adds(M.vec[0], S), 
-        vec4_adds(M.vec[1], S), 
-        vec4_adds(M.vec[2], S), 
-        vec4_adds(M.vec[3], S)
+        vec4_adds(m.vec[0], s), 
+        vec4_adds(m.vec[1], s), 
+        vec4_adds(m.vec[2], s), 
+        vec4_adds(m.vec[3], s)
     );
 }
 
-mat4_t mat4_subs( mat4_t M, scal_t S )
-{
+mat4_t mat4_subs ( mat4_t m, scal_t s ) {
     return mat4_init(
-        vec4_subs(M.vec[0], S), 
-        vec4_subs(M.vec[1], S), 
-        vec4_subs(M.vec[2], S), 
-        vec4_subs(M.vec[3], S)
+        vec4_subs(m.vec[0], s), 
+        vec4_subs(m.vec[1], s), 
+        vec4_subs(m.vec[2], s), 
+        vec4_subs(m.vec[3], s)
     );
 }
 
-mat4_t mat4_muls( mat4_t M, scal_t S )
-{
+mat4_t mat4_muls ( mat4_t m, scal_t s ) {
     return mat4_init(
-        vec4_muls(M.vec[0], S), 
-        vec4_muls(M.vec[1], S), 
-        vec4_muls(M.vec[2], S), 
-        vec4_muls(M.vec[3], S)
+        vec4_muls(m.vec[0], s), 
+        vec4_muls(m.vec[1], s), 
+        vec4_muls(m.vec[2], s), 
+        vec4_muls(m.vec[3], s)
     );
 }
 
-mat4_t mat4_transpose( mat4_t M )
-{
-    mat4_t I = M;
-    I.mat[0][1] = M.mat[1][0];
-    I.mat[0][2] = M.mat[2][0];
-    I.mat[0][3] = M.mat[3][0];
-    I.mat[1][0] = M.mat[0][1];
-    I.mat[1][2] = M.mat[2][1];
-    I.mat[1][3] = M.mat[3][1];
-    I.mat[2][0] = M.mat[0][2];
-    I.mat[2][1] = M.mat[1][2];
-    I.mat[2][3] = M.mat[3][2];
-    I.mat[3][0] = M.mat[0][3];
-    I.mat[3][1] = M.mat[1][3];
-    I.mat[3][2] = M.mat[2][3];
-    return I;
+mat4_t mat4_transpose ( mat4_t m ) {
+    mat4_t i = m;
+    i.mat[0][1] = m.mat[1][0];
+    i.mat[0][2] = m.mat[2][0];
+    i.mat[0][3] = m.mat[3][0];
+    i.mat[1][0] = m.mat[0][1];
+    i.mat[1][2] = m.mat[2][1];
+    i.mat[1][3] = m.mat[3][1];
+    i.mat[2][0] = m.mat[0][2];
+    i.mat[2][1] = m.mat[1][2];
+    i.mat[2][3] = m.mat[3][2];
+    i.mat[3][0] = m.mat[0][3];
+    i.mat[3][1] = m.mat[1][3];
+    i.mat[3][2] = m.mat[2][3];
+    return i;
 }
 
-mat4_t mat4_inverse( mat4_t M )
+mat4_t mat4_inverse ( mat4_t M )
 {
     mat4_t I = mat4_identity();  
     I.elm[0]  =  M.elm[5] * M.elm[10] * M.elm[15] - M.elm[5] * M.elm[11] * M.elm[14] - M.elm[9] * M.elm[6] * M.elm[15] + M.elm[9] * M.elm[7] * M.elm[14] + M.elm[13] * M.elm[6] * M.elm[11] - M.elm[13] * M.elm[7] * M.elm[10];
@@ -787,7 +670,7 @@ mat4_t mat4_inverse( mat4_t M )
     scal_t det = M.elm[0] * I.elm[0] + M.elm[1] * I.elm[4] + M.elm[2] * I.elm[8] + M.elm[3] * I.elm[12];
 
     if ( fabs(det) < 1e-10 ) {
-        return mat4_identity();
+        return mat4_identity ();
     }
 
     det = 1.0 / det;
@@ -795,13 +678,13 @@ mat4_t mat4_inverse( mat4_t M )
 }
 
 
-mat4_t mat4_translate ( mat4_t M, vec3_t V )
+mat4_t mat4_translate ( mat4_t m, vec3_t v )
 {
-    mat4_t T = mat4_identity();
-    T.mat[0][3] = V.x;
-    T.mat[1][3] = V.y;
-    T.mat[2][3] = V.z;
-    return mat4_mul ( M, T );
+    mat4_t t = mat4_identity();
+    t.mat[0][3] = v.x;
+    t.mat[1][3] = v.y;
+    t.mat[2][3] = v.z;
+    return mat4_mul (m, t);
 }
 
 mat4_t mat4_scale ( mat4_t M, vec3_t V )
@@ -836,56 +719,56 @@ mat4_t mat4_rotate( vec3_t v )
     return m;
 }
 
-mat4_t mat4_ortho(scal_t left, scal_t right, scal_t bot, scal_t top, scal_t near, scal_t far)
+mat4_t mat4_ortho ( scal_t left, scal_t right, scal_t bot, scal_t top, scal_t near, scal_t far )
 {
-    mat4_t O = mat4_identity();
+    mat4_t o = mat4_identity();
     scal_t lr = 1.0f / (left - right);
     scal_t bt = 1.0f / (bot  - top);
     scal_t nf = 1.0f / (near - far);
-    O.vec[0].x = (-2.0f * lr);
-    O.vec[1].y = (-2.0f * bt);
-    O.vec[2].z = ( 2.0f * nf);
-    O.vec[3].x = (left + right) * lr;
-    O.vec[3].y = (top  + bot  ) * bt;
-    O.vec[3].z = (far  + near ) * nf;
-    return O;
+    o.vec[0].x = (-2.0f * lr);
+    o.vec[1].y = (-2.0f * bt);
+    o.vec[2].z = ( 2.0f * nf);
+    o.vec[3].x = (left + right) * lr;
+    o.vec[3].y = (top  + bot  ) * bt;
+    o.vec[3].z = (far  + near ) * nf;
+    return o;
 }
 
-mat4_t mat4_perspective(scal_t fov, scal_t aspect_ratio, scal_t near, scal_t far)
+mat4_t mat4_perspective ( scal_t fov, scal_t aspect_ratio, scal_t near, scal_t far )
 {
+    mat4_t p = mat4_identity();   
     scal_t hfov = tan(fov * 0.5f);
-    mat4_t P = mat4_identity();   
-    P.vec[0].x = (1.0f / (aspect_ratio * hfov));
-    P.vec[1].y = (1.0f / hfov);
-    P.vec[2].z = (-((far + near) / (far - near)));
-    P.vec[2].w = (-1.0f);
-    P.vec[3].z = (-((2.0f * far * near) / (far - near)));
-    return P;
+    p.vec[0].x = (1.0f / (aspect_ratio * hfov));
+    p.vec[1].y = (1.0f / hfov);
+    p.vec[2].z = (-((far + near) / (far - near)));
+    p.vec[2].w = (-1.0f);
+    p.vec[3].z = (-((2.0f * far * near) / (far - near)));
+    return p;
 }
 
-mat4_t mat4_lookat (vec3_t eye, vec3_t center, vec3_t up)
+mat4_t mat4_lookat (vec3_t eye, vec3_t center, vec3_t up )
 {
-    mat4_t result = mat4_identity();   
+    mat4_t l = mat4_identity();   
     vec3_t f = vec3_normal(vec3_sub(center, eye));
     vec3_t s = vec3_normal(vec3_cross(f, up));
     vec3_t u = vec3_cross(s, f);    
-    result.mat[0][0] =  s.x;
-    result.mat[0][1] =  u.x;
-    result.mat[0][2] = -f.x;
-    result.mat[0][3] =  0.0f;    
-    result.mat[1][0] =  s.y;
-    result.mat[1][1] =  u.y;
-    result.mat[1][2] = -f.y;
-    result.mat[1][3] =  0.0f;
-    result.mat[2][0] =  s.z;
-    result.mat[2][1] =  u.z;
-    result.mat[2][2] = -f.z;
-    result.mat[2][3] =  0.0f;
-    result.mat[3][0] = -vec3_dot(s, eye);
-    result.mat[3][1] =  vec3_dot(u, eye);
-    result.mat[3][2] =  vec3_dot(f, eye);
-    result.mat[3][3] =  1.0f;
-    return result;
+    l.mat[0][0] =  s.x;
+    l.mat[0][1] =  u.x;
+    l.mat[0][2] = -f.x;
+    l.mat[0][3] =  0.0f;    
+    l.mat[1][0] =  s.y;
+    l.mat[1][1] =  u.y;
+    l.mat[1][2] = -f.y;
+    l.mat[1][3] =  0.0f;
+    l.mat[2][0] =  s.z;
+    l.mat[2][1] =  u.z;
+    l.mat[2][2] = -f.z;
+    l.mat[2][3] =  0.0f;
+    l.mat[3][0] = -vec3_dot(s, eye);
+    l.mat[3][1] =  vec3_dot(u, eye);
+    l.mat[3][2] =  vec3_dot(f, eye);
+    l.mat[3][3] =  1.0f;
+    return l;
 }
 
 

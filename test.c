@@ -164,6 +164,10 @@ void mat4_testfunctions(void)
 
 int main()
 {
-    mat2_testfunctions();
+    //mat2_testfunctions();
+    v4_testfunctions();
+
+
+
     return 0;
 }

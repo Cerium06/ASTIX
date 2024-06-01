@@ -93,18 +93,18 @@ extern float invsqrt ( float x );
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-extern vec2_t vec2_add          (vec2_t U, vec2_t V);
-extern vec2_t vec2_sub          (vec2_t U, vec2_t V);
-extern vec2_t vec2_mul          (vec2_t U, vec2_t V);
-extern vec2_t vec2_adds         (vec2_t U, scal_t S);
-extern vec2_t vec2_subs         (vec2_t U, scal_t S);
-extern vec2_t vec2_muls         (vec2_t U, scal_t S);
-extern scal_t vec2_dot          (vec2_t U, vec2_t V);
-extern scal_t vec2_lensqr       (vec2_t U);
-extern scal_t vec2_invlength    (vec2_t U);
-extern scal_t vec2_length       (vec2_t U);
-extern vec2_t vec2_normal       (vec2_t U);
-extern vec2_t vec2_mul_mat2     (vec2_t V, mat2_t M);
+extern vec2_t vec2_add          ( vec2_t u, vec2_t v );
+extern vec2_t vec2_sub          ( vec2_t u, vec2_t v );
+extern vec2_t vec2_mul          ( vec2_t u, vec2_t v );
+extern vec2_t vec2_adds         ( vec2_t u, scal_t s );
+extern vec2_t vec2_subs         ( vec2_t u, scal_t s );
+extern vec2_t vec2_muls         ( vec2_t u, scal_t s );
+extern scal_t vec2_dot          ( vec2_t u, vec2_t v );
+extern scal_t vec2_lensqr       ( vec2_t u );
+extern scal_t vec2_invlength    ( vec2_t u );
+extern scal_t vec2_length       ( vec2_t u );
+extern vec2_t vec2_normal       ( vec2_t u );
+extern vec2_t vec2_mul_mat2     ( vec2_t V, mat2_t M );
 
 /////////////////////////////////////////////////////////////////
 //===============================================================
@@ -114,20 +114,20 @@ extern vec2_t vec2_mul_mat2     (vec2_t V, mat2_t M);
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-extern vec3_t vec3_add          (vec3_t U, vec3_t V);
-extern vec3_t vec3_sub          (vec3_t U, vec3_t V);
-extern vec3_t vec3_mul          (vec3_t U, vec3_t V);
-extern vec3_t vec3_adds         (vec3_t U, scal_t S);
-extern vec3_t vec3_subs         (vec3_t U, scal_t S);
-extern vec3_t vec3_muls         (vec3_t U, scal_t S);
-extern scal_t vec3_dot          (vec3_t U, vec3_t V);
-extern scal_t vec3_lensqr       (vec3_t U);
-extern scal_t vec3_invlength    (vec3_t U);
-extern scal_t vec3_length       (vec3_t U);
-extern vec3_t vec3_normal       (vec3_t U);
-extern vec3_t vec3_mul_mat3     (vec3_t V, mat3_t M);
-extern vec3_t vec3_cross        (vec3_t U, vec3_t V);
-extern vec3_t vec3_mul_mat4     (vec3_t V, mat4_t M);
+extern vec3_t vec3_add          ( vec3_t u, vec3_t v );
+extern vec3_t vec3_sub          ( vec3_t u, vec3_t v );
+extern vec3_t vec3_mul          ( vec3_t u, vec3_t v );
+extern vec3_t vec3_adds         ( vec3_t u, scal_t s );
+extern vec3_t vec3_subs         ( vec3_t u, scal_t s );
+extern vec3_t vec3_muls         ( vec3_t u, scal_t s );
+extern scal_t vec3_dot          ( vec3_t u, vec3_t v );
+extern scal_t vec3_lensqr       ( vec3_t u );
+extern scal_t vec3_invlength    ( vec3_t u );
+extern scal_t vec3_length       ( vec3_t u );
+extern vec3_t vec3_normal       ( vec3_t u );
+extern vec3_t vec3_cross        ( vec3_t u, vec3_t v );
+extern vec3_t vec3_mul_mat3     ( vec3_t V, mat3_t M );
+extern vec3_t vec3_mul_mat4     ( vec3_t V, mat4_t M );
 
 /////////////////////////////////////////////////////////////////
 //===============================================================
@@ -137,18 +137,18 @@ extern vec3_t vec3_mul_mat4     (vec3_t V, mat4_t M);
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-extern vec4_t vec4_add          (vec4_t U, vec4_t V);
-extern vec4_t vec4_sub          (vec4_t U, vec4_t V);
-extern vec4_t vec4_mul          (vec4_t U, vec4_t V);
-extern vec4_t vec4_adds         (vec4_t U, scal_t S);
-extern vec4_t vec4_subs         (vec4_t U, scal_t S);
-extern vec4_t vec4_muls         (vec4_t U, scal_t S);
-extern scal_t vec4_dot          (vec4_t U, vec4_t V);
-extern scal_t vec4_lensqr       (vec4_t U);
-extern scal_t vec4_invlength    (vec4_t U);
-extern scal_t vec4_length       (vec4_t U);
-extern vec4_t vec4_normal       (vec4_t U);
-extern vec4_t vec4_mul_mat4     (vec4_t V, mat4_t M);
+extern vec4_t vec4_add          ( vec4_t u, vec4_t v );
+extern vec4_t vec4_sub          ( vec4_t u, vec4_t v );
+extern vec4_t vec4_mul          ( vec4_t u, vec4_t v );
+extern vec4_t vec4_adds         ( vec4_t u, scal_t s );
+extern vec4_t vec4_subs         ( vec4_t u, scal_t s );
+extern vec4_t vec4_muls         ( vec4_t u, scal_t s );
+extern scal_t vec4_dot          ( vec4_t u, vec4_t v );
+extern scal_t vec4_lensqr       ( vec4_t u );
+extern scal_t vec4_invlength    ( vec4_t u );
+extern scal_t vec4_length       ( vec4_t u );
+extern vec4_t vec4_normal       ( vec4_t u );
+extern vec4_t vec4_mul_mat4     ( vec4_t u, mat4_t m );
 
 /////////////////////////////////////////////////////////////////
 //===============================================================
@@ -158,19 +158,19 @@ extern vec4_t vec4_mul_mat4     (vec4_t V, mat4_t M);
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-extern quat_t quat_add          ( quat_t U, quat_t V );
-extern quat_t quat_sub          ( quat_t U, quat_t V );
-extern quat_t quat_mul          ( quat_t U, quat_t V );
-extern quat_t quat_adds         ( quat_t U, scal_t S );
-extern quat_t quat_subs         ( quat_t U, scal_t S );
-extern quat_t quat_muls         ( quat_t U, scal_t S );
-extern scal_t quat_dot          ( quat_t U, quat_t V );
-extern scal_t quat_lensqr       ( quat_t U );
-extern scal_t quat_invlength    ( quat_t U );
-extern scal_t quat_length       ( quat_t U );
-extern quat_t quat_normal       ( quat_t U );
-extern quat_t quat_conjugate    ( quat_t Q );
-extern quat_t quat_inverse      ( quat_t Q );
+extern quat_t quat_add          ( quat_t q, quat_t r );
+extern quat_t quat_sub          ( quat_t q, quat_t r );
+extern quat_t quat_mul          ( quat_t q, quat_t r );
+extern quat_t quat_adds         ( quat_t q, scal_t s );
+extern quat_t quat_subs         ( quat_t q, scal_t s );
+extern quat_t quat_muls         ( quat_t q, scal_t s );
+extern scal_t quat_dot          ( quat_t q, quat_t r );
+extern scal_t quat_lensqr       ( quat_t q );
+extern scal_t quat_invlength    ( quat_t q );
+extern scal_t quat_length       ( quat_t q );
+extern quat_t quat_normal       ( quat_t q );
+extern quat_t quat_conjugate    ( quat_t q );
+extern quat_t quat_inverse      ( quat_t q );
 
 /////////////////////////////////////////////////////////////////
 //===============================================================
@@ -181,14 +181,14 @@ extern quat_t quat_inverse      ( quat_t Q );
 /////////////////////////////////////////////////////////////////
 
 extern mat2_t mat2_identity     ( void );
-extern mat2_t mat2_add          (mat2_t M, mat2_t N);
-extern mat2_t mat2_sub          (mat2_t M, mat2_t N);
-extern mat2_t mat2_mul          (mat2_t M, mat2_t N);
-extern mat2_t mat2_adds         (mat2_t M, scal_t N);
-extern mat2_t mat2_subs         (mat2_t M, scal_t N);
-extern mat2_t mat2_muls         (mat2_t M, scal_t N);
-extern mat2_t mat2_transpose    (mat2_t M);
-extern mat2_t mat2_inverse      (mat2_t M);
+extern mat2_t mat2_add          ( mat2_t m, mat2_t n );
+extern mat2_t mat2_sub          ( mat2_t m, mat2_t n );
+extern mat2_t mat2_mul          ( mat2_t m, mat2_t n );
+extern mat2_t mat2_adds         ( mat2_t m, scal_t s );
+extern mat2_t mat2_subs         ( mat2_t m, scal_t s );
+extern mat2_t mat2_muls         ( mat2_t m, scal_t s );
+extern mat2_t mat2_transpose    ( mat2_t m );
+extern mat2_t mat2_inverse      ( mat2_t m );
 
 /////////////////////////////////////////////////////////////////
 //===============================================================
@@ -199,14 +199,14 @@ extern mat2_t mat2_inverse      (mat2_t M);
 /////////////////////////////////////////////////////////////////
 
 extern mat3_t   mat3_identity       ( void );
-extern mat3_t   mat3_add            ( mat3_t M, mat3_t N );
-extern mat3_t   mat3_sub            ( mat3_t M, mat3_t N );
-extern mat3_t   mat3_mul            ( mat3_t M, mat3_t N );
-extern mat3_t   mat3_adds           ( mat3_t M, scal_t N );
-extern mat3_t   mat3_subs           ( mat3_t M, scal_t N );
-extern mat3_t   mat3_muls           ( mat3_t M, scal_t N );
-extern mat3_t   mat3_transpose      ( mat3_t M );
-extern mat3_t   mat3_inverse        ( mat3_t M );
+extern mat3_t   mat3_add            ( mat3_t m, mat3_t n );
+extern mat3_t   mat3_sub            ( mat3_t m, mat3_t n );
+extern mat3_t   mat3_mul            ( mat3_t m, mat3_t n );
+extern mat3_t   mat3_adds           ( mat3_t m, scal_t s );
+extern mat3_t   mat3_subs           ( mat3_t m, scal_t s );
+extern mat3_t   mat3_muls           ( mat3_t m, scal_t s );
+extern mat3_t   mat3_transpose      ( mat3_t m );
+extern mat3_t   mat3_inverse        ( mat3_t m );
 
 /////////////////////////////////////////////////////////////////
 //===============================================================
@@ -216,18 +216,18 @@ extern mat3_t   mat3_inverse        ( mat3_t M );
 //===============================================================
 /////////////////////////////////////////////////////////////////
 
-extern mat4_t   mat4_identity       (void);
-extern mat4_t   mat4_add            ( mat4_t M, mat4_t N );
-extern mat4_t   mat4_sub            ( mat4_t M, mat4_t N );
-extern mat4_t   mat4_mul            ( mat4_t M, mat4_t N );
-extern mat4_t   mat4_adds           ( mat4_t M, scal_t N );
-extern mat4_t   mat4_subs           ( mat4_t M, scal_t N );
-extern mat4_t   mat4_muls           ( mat4_t M, scal_t N );
-extern mat4_t   mat4_translate      ( mat4_t M, vec3_t V );
-extern mat4_t   mat4_scale          ( mat4_t M, vec3_t V );
-extern mat4_t   mat4_rotate         ( vec3_t V );
-extern mat4_t   mat4_transpose      ( mat4_t M );
-extern mat4_t   mat4_inverse        ( mat4_t M );
+extern mat4_t   mat4_identity       ( void );
+extern mat4_t   mat4_add            ( mat4_t m, mat4_t n );
+extern mat4_t   mat4_sub            ( mat4_t m, mat4_t n );
+extern mat4_t   mat4_mul            ( mat4_t m, mat4_t n );
+extern mat4_t   mat4_adds           ( mat4_t m, scal_t s );
+extern mat4_t   mat4_subs           ( mat4_t m, scal_t s );
+extern mat4_t   mat4_muls           ( mat4_t m, scal_t s );
+extern mat4_t   mat4_translate      ( mat4_t m, vec3_t v );
+extern mat4_t   mat4_scale          ( mat4_t m, vec3_t v );
+extern mat4_t   mat4_rotate         ( vec3_t v );
+extern mat4_t   mat4_transpose      ( mat4_t m );
+extern mat4_t   mat4_inverse        ( mat4_t m );
 extern mat4_t   mat4_ortho          ( scal_t left, scal_t right, scal_t bottom, scal_t top, scal_t near, scal_t far );
 extern mat4_t   mat4_perspective    ( scal_t fov, scal_t aspect, scal_t near, scal_t far );
 extern mat4_t   mat4_lookat         ( vec3_t eye, vec3_t center, vec3_t up );
